@@ -4,7 +4,7 @@ from sklearn import metrics
 
 from sklearn.cluster import DBSCAN
 import matplotlib.pyplot as plt# reading the classic iris dataset into a df
-st_df = pd.read_csv("C://Users//KALYAN//Downloads//CSCE474Project-main//CSCE474Project-main//forceDataPreProcessed.csv")
+st_df = pd.read_csv("C://Users//Nithish//Downloads//CSCE474Project-main//CSCE474Project-main//forceDataPreProcessed.csv")
 dataset = st_df.head(n=1000)
 print(dataset)
 dataset_table = dataset[['PoliceUseOfForceID','CaseNumber','X', 'Y']]
