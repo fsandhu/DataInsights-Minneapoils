@@ -10,11 +10,13 @@ pip install -r requirements.txt
 
 # 474Project.ipynb
 
-this is the file where we did some preprocessing of the data. This is where we removed attributes that weren't of use to us and replaced null binary values with false or no in this case. We did some preprocessing in Excel and most of that was to remove records that had 0 in latitude and longitude. We also used Excel to split the data into postBLM and preBLM data.
+This is the notebook file where we did some genereal preprocessing of the data. We removed attributes that weren't of use to us and replaced null binary values with false or no in this case. We did some preprocessing in Excel and most of that was to remove records that had 0 in latitude and longitude. We also used Excel to split the data into postBLM and preBLM data.
 
 # Weka
 
 We used Weka to generate our association rules. We ran the algorithm on the preprocessed data, there were some errors that have to be solved before you can run them. To remove the errors you need to remove all the apostrophes from the data. We used a minimum confidence of 0.7 for all the runs.
+
+For stop data, first we ran the algorithm on all the attributes but no interesting rules were observed. Then we used the stopDataProcessed.csv file to choose sets of two attributes at a time and then ran the algorithm multiple times to get interesting rules. The dataset was heavily biased in some attributes so we also balanced them all in different csv files and then ran the algorithm again. The rules generated are included as png files in the zip.
 
 # spatioTemporalClustering.py
 
