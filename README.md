@@ -43,6 +43,12 @@ This will list all the commandline options and their help strings. For the most 
 # SpartialClusteringAndVisualisation  
 
 Using python tools such as Anaconda we imported the data from data sets. On basis of clustering model we predicted the data. We loaded the data from datasets and accquired different set of attributes from the csv file. 
-Based on the four parameters(longitudue, latitude,case Number, Police Force ID) the label is about weather we are going to get a 911 call or not. The Attributes are labelled using label encounter for design model.  Labels are implemented on each data fitting scenario for every considered region. 
-Dbscan gives the basic understanding of clustering. 
+Based on the four parameters(longitudue, latitude,case Number, Police Force ID) the label is about weather we are going to get a 911 call or not. The Attributes are labelled using label encounter for design model.  
+
+Labels are implemented on each data fitting scenario for every considered region. 
+
+Our design aims to provide a clustering feature to represent the design aspects on the basis of police force data. We have implemented a data cleaning process to initiate the design acquisition based on the Numeric responses of the columns where each set of the data attribute is Case-id, X, Y , Problem and Neighborhood. Each set of the clustering model is represented with the features accepted with the design, and its attributes are clustered with correct response based on the data fitting.
+The data labeling is modelled with “label_encoder.fit_transform” utilizing the different string values to corresponding numeric response. For each required column with Dataset_table  are applied to visualize as a cluster feature.
+Finally we apply DBSCAN algorithm to initiate the data fitting of the Set of columns and row which are implemented. For case of 1000
+
 To observer different clusters formed we performed dbscan algorithm, then for visualization we plot the crime data using pyplot and scatterplot. 
