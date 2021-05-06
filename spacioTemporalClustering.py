@@ -336,7 +336,10 @@ def getArgs():
     parser.add_argument("-f","--from",default="2008/01/01",type=lambda d: dt.datetime.strptime(d, '%Y/%m/%d'),action=fromDateAction,help="Date to start the analysis at in YYYY/mm/dd format")
     parser.add_argument("-t","--to",default="2021/03/14",type=lambda d: dt.datetime.strptime(d, '%Y/%m/%d'),action=toDateAction, help="Date to end the analysis at in YYYY/mm/dd format")
     parser.add_argument("-n","--name",default="test",type=str,help="Name of the saved gif/images")
-    parser.add_argument("--typeToValue",type=json.loads,help="JSON Dictionary of columns and values to do analysis over")
+    parser.add_argument("--typeToValue",type=json.loads,help="JSON Dictionary of columns and values to do analysis over"+
+                        " (e.g. '{\"Race\":[\"Black\",\"White\"]}'). The provided columns must be available to all chosen datasets."+
+                        "\tPossible columns: | Stops: Problem, Reason, Race, CitationIssued, PersonSearch, CallDisposition. | "+
+                        "Shots: Problem. | Force: Problem, Is911Call, PrimaryOffense, SubjectInjury, Race, ForceType, ForceTypeAction. |")
 
     parser.add_argument("--customRange",type=int, default=7, help="Range in days for dynamic analysis. Only used if flagged as '--custom'")
     parser.add_argument("--customStep", type=int, default=1, help="Step size in days for dynamic analysis. Only used if flagged as '--custom'")
