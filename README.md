@@ -8,14 +8,14 @@ In order to run any of the programs in this project, you will need to have the r
 pip install -r requirements.txt
 ```
 
-# spacioTemporalClustering.py
+# spatioTemporalClustering.py
 
-This is the program that does spacio-temporal clustering analysis, as one would infer from the name. The program has a variety of commandline arguments that allow the user to customize their output. The program will then output a number of visuals to allow the user to interpret them. For the two main modes: static and dynamic, static will output a single png image, while dynamic will output a number of png images and also a gif. These outputs are placed in `./images/static` for static analysis images `./images` for dynamic images and `./gifs` for gifs.
+This is the program that does spatio-temporal clustering analysis, as one would infer from the name. The program has a variety of commandline arguments that allow the user to customize their output. The program will then output a number of visuals to allow the user to interpret them. For the two main modes: static and dynamic, static will output a single png image, while dynamic will output a number of png images and also a gif. These outputs are placed in `./images/static` for static analysis images `./images` for dynamic images and `./gifs` for gifs.
 
 The commandline options are extensive. To get help while running the program simply run the following command:
 
 ```
-python spacioTemporalClustering.py -h
+python spatioTemporalClustering.py -h
 ```
 
 This will list all the commandline options and their help strings. For the most important ones, they will be repeated here.
