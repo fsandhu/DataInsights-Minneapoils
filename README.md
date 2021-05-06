@@ -39,3 +39,10 @@ This will list all the commandline options and their help strings. For the most 
 - From date: `-f` or `--from`, provide the date to start the analysis on, inclusive, in the format YYYY-mm-dd
 - To date: `-t` or `--to`, provide the date to end the analysis on, inclusive, in the format YYYY-mm-dd
 - Dataset flags: `--stop --force --shots` are the flags to signify which datasets you want the analysis to be preformed over. Multiple datasets can be chosen. None of them are on by default. One must be provided for the program to do anything.
+
+# SpartialClusteringAndVisualisation  
+
+Using python tools such as Anaconda we imported the data from data sets. On basis of clustering model we predicted the data. We loaded the data from datasets and accquired different set of attributes from the csv file. 
+Based on the four parameters(longitudue, latitude,case Number, Police Force ID) the label is about weather we are going to get a 911 call or not. The Attributes are labelled using label encounter for design model.  Labels are implemented on each data fitting scenario for every considered region. 
+Dbscan gives the basic understanding of clustering. 
+To observer different clusters formed we performed dbscan algorithm, then for visualization we plot the crime data using pyplot and scatterplot. 
