@@ -18,6 +18,10 @@ We used Weka to generate our association rules. We ran the algorithm on the prep
 
 For stop data, first we ran the algorithm on all the attributes but no interesting rules were observed. Then we used the stopDataProcessed.csv file to choose sets of two attributes at a time and then ran the algorithm multiple times to get interesting rules. The dataset was heavily biased in some attributes so we also balanced them all in different csv files and then ran the algorithm again. The rules generated are included as png files in the zip.
 
+Similar analysis was done with the Use Of Force dataset (forceDataAssociation.csv) and the Shots Fired dataset (shotsDataPreProcessed.csv)
+
+Then we also visualized the race attribute in these datasets to see if there was any signifanct differences after the BLM protests (25 May 2020). We only had data for ~10 months after the BLM protests so we took data from only ~10 months before BLM protests to get better results.
+
 # spatioTemporalClustering.py
 
 This is the program that does spatio-temporal clustering analysis, as one would infer from the name. The program has a variety of commandline arguments that allow the user to customize their output. The program will then output a number of visuals to allow the user to interpret them. For the two main modes: static and dynamic, static will output a single png image, while dynamic will output a number of png images and also a gif. These outputs are placed in `./images/static` for static analysis images `./images` for dynamic images and `./gifs` for gifs.
