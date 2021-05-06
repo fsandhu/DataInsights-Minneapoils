@@ -1,0 +1,7 @@
+numpy
+sklearn
+pandas
+argparse
+matplotlib
+PIL
+glob
