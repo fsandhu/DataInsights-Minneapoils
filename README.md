@@ -8,6 +8,14 @@ In order to run any of the programs in this project, you will need to have the r
 pip install -r requirements.txt
 ```
 
+# 474Project.ipynb
+
+this is the file where we did some preprocessing of the data. This is where we removed attributes that weren't of use to us and replaced null binary values with false or no in this case. We did some preprocessing in Excel and most of that was to remove records that had 0 in latitude and longitude. We also used Excel to split the data into postBLM and preBLM data.
+
+# Weka
+
+We used Weka to generate our association rules. We ran the algorithm on the preprocessed data, there were some errors that have to be solved before you can run them. To remove the errors you need to remove all the apostrophes from the data. We used a minimum confidence of 0.7 for all the runs.
+
 # spatioTemporalClustering.py
 
 This is the program that does spatio-temporal clustering analysis, as one would infer from the name. The program has a variety of commandline arguments that allow the user to customize their output. The program will then output a number of visuals to allow the user to interpret them. For the two main modes: static and dynamic, static will output a single png image, while dynamic will output a number of png images and also a gif. These outputs are placed in `./images/static` for static analysis images `./images` for dynamic images and `./gifs` for gifs.
