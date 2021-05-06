@@ -125,7 +125,8 @@ def clusteringAnalysis(df,cols,separators,args,
                 subprocess.call("rm -r {}/*.png".format(imageDir),shell=True)
             elif args.static:
                 #Do static analysis over the constrained data, based on key/value pair
-                staticAnalysis()
+                staticAnalysis(df.loc[(df[col]==i) & (df.Datetime >= startDate) & (df.Datetime <= stopDate)],
+                                cols,tmpName,args, xlim=xlim,ylim=ylim,eps=eps)
                 #Create directory to copy images to
                 copyFilePath = os.path.join(os.getcwd(),"images/static/",name)
                 if not os.path.exists(copyFilePath):
@@ -428,10 +429,10 @@ def main():
             clusteringAnalysis(stopsDataset,cols,args.typeToValue,args,xlim=xlim,ylim=ylim,eps=args.eps,name=args.name,startDate=startDate,stopDate=stopDate)
         elif not args.static:
             dynamicAnalysis(stopsDataset.loc[(stopsDataset.Datetime <= stopDate) & (stopsDataset.Datetime >= startDate)],
-                        cols,args.name,args.customRange, args.customStep, xlim=xlim,ylim=ylim,eps=args.eps)
+                        cols,args.name+"_stops",args.customRange, args.customStep, xlim=xlim,ylim=ylim,eps=args.eps)
         else:
             staticAnalysis(stopsDataset.loc[(stopsDataset.Datetime <= stopDate) & (stopsDataset.Datetime >= startDate)],
-                        cols,args.name,args,xlim=xlim,ylim=ylim,eps=args.eps)
+                        cols,args.name+"_stops",args,xlim=xlim,ylim=ylim,eps=args.eps)
 
     #If we want to work with the force data, extract and reformat the data as needed
     if args.force:
@@ -487,10 +488,10 @@ def main():
             clusteringAnalysis(forceDataset,cols,args.typeToValue,args,xlim=xlim,ylim=ylim,eps=args.eps,name=args.name,startDate=startDate,stopDate=stopDate)
         elif not args.static:
             dynamicAnalysis(forceDataset.loc[(forceDataset.Datetime <= stopDate) & (forceDataset.Datetime >= startDate)],
-                        cols,args.name,args.customRange, args.customStep, xlim=xlim,ylim=ylim,eps=args.eps)
+                        cols,args.name+"_force",args.customRange, args.customStep, xlim=xlim,ylim=ylim,eps=args.eps)
         else:
             staticAnalysis(forceDataset.loc[(forceDataset.Datetime <= stopDate) & (forceDataset.Datetime >= startDate)],
-                        cols,args.name,args,xlim=xlim,ylim=ylim,eps=args.eps)
+                        cols,args.name+"_force",args,xlim=xlim,ylim=ylim,eps=args.eps)
 
 
     #If we want to work with the shots data, extract and reformat the data as needed
@@ -545,10 +546,10 @@ def main():
             clusteringAnalysis(shotsDataset,cols,args.typeToValue,args,xlim=xlim,ylim=ylim,eps=args.eps,name=args.name,startDate=startDate,stopDate=stopDate)
         elif not args.static:
             dynamicAnalysis(shotsDataset.loc[(shotsDataset.Datetime <= stopDate) & (shotsDataset.Datetime >= startDate)],
-                        cols,args.name,args.customRange,args.customStep,xlim=xlim,ylim=ylim,eps=args.eps)
+                        cols,args.name+"_shots",args.customRange,args.customStep,xlim=xlim,ylim=ylim,eps=args.eps)
         else:
             staticAnalysis(shotsDataset.loc[(shotsDataset.Datetime <= stopDate) & (shotsDataset.Datetime >= startDate)],
-                        cols,args.name,args,xlim=xlim,ylim=ylim,eps=args.eps)
+                        cols,args.name+"_shots",args,xlim=xlim,ylim=ylim,eps=args.eps)
 
 
 if __name__ == "__main__":
